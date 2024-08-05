@@ -2,13 +2,12 @@ import 'package:catatan_harian_bps/src/providers/auth_providers.dart';
 import 'package:catatan_harian_bps/src/views/login_page/login_page.dart';
 import 'package:catatan_harian_bps/src/views/pengawas/home_page.dart';
 import 'package:catatan_harian_bps/src/views/petugas/home_page.dart';
-import 'package:catatan_harian_bps/src/views/petugas/verifikasi_page/verifikasi_laporan_page.dart';
 import 'package:catatan_harian_bps/src/views/splash/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:provider/provider.dart';
-import 'package:month_year_picker/month_year_picker.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:month_year_picker/month_year_picker.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
