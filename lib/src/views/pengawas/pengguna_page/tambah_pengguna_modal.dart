@@ -13,6 +13,7 @@ class _TambahPenggunaModalState extends State<TambahPenggunaModal> {
   String? nip = '';
   String? password = '';
   String? role = '';
+  String? bagian = '';
   bool obscurePassword = true;
 
   late TextEditingController _nipController = TextEditingController();
@@ -147,6 +148,52 @@ class _TambahPenggunaModalState extends State<TambahPenggunaModal> {
                     ),
                   ),
                   SizedBox(height: 20),
+                  DropdownButtonFormField<String>(
+                    value: bagian,
+                    onChanged: (value) {
+                      setState(() {
+                        bagian = value!;
+                      });
+                    },
+                    items: [
+                      DropdownMenuItem(
+                        value: '',
+                        child: Text('Pilih Bagian Petugas / Pengawas'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Statistisi Ahli Muda',
+                        child: Text('Statistisi Ahli Muda'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Statistisi Ahli Pertama',
+                        child: Text('Statistisi Ahli Pertama'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Statistisi Penyelia',
+                        child: Text('Statistisi Penyelia'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Statistisi Mahir',
+                        child: Text('Statistisi Mahir'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Pranata Komputer Ahli Muda',
+                        child: Text('Pranata Komputer Ahli Muda'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Pelaksana',
+                        child: Text('Pelaksana'),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Kepala Sub Bagian Umum',
+                        child: Text('(Pengawas) Kepala Sub Bagian Umum'),
+                      ),
+                    ],
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -162,6 +209,7 @@ class _TambahPenggunaModalState extends State<TambahPenggunaModal> {
                                   nip!,
                                   password!,
                                   role!,
+                                  bagian!,
                                 );
                                 if (result.containsKey('success')) {
                                   SnackbarUtils.showSuccessSnackbar(

@@ -1,0 +1,4 @@
+#Mon Aug 05 18:20:45 WIB 2024
+base.0=D\:\\Project\\Skripsi Didin\\Apps\\Mobile\\catatan-bps-mobile\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

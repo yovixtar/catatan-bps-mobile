@@ -26,6 +26,7 @@ class _HomePengawasState extends State<HomePengawas> {
   late String _nip = '';
   late String _nama = '';
   late String _role = '';
+  late String _bagian = '';
 
   PageType? _currentPage;
 
@@ -50,6 +51,7 @@ class _HomePengawasState extends State<HomePengawas> {
         _nip = decodedToken['nip'] ?? '';
         _nama = decodedToken['nama'] ?? '';
         _role = decodedToken['role'] ?? '';
+        _bagian = decodedToken['bagian'] ?? '';
       });
     }
   }
@@ -138,6 +140,7 @@ class _HomePengawasState extends State<HomePengawas> {
                         nip: _nip,
                         nama: _nama,
                         role: _role,
+                        bagian: _bagian,
                       );
                     },
                   );

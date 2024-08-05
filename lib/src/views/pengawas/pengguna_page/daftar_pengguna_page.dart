@@ -24,7 +24,6 @@ class _DaftarPenggunaPageState extends State<DaftarPenggunaPage> {
       List<Pengguna>? data = await APIService().getDataUser(role: role);
       return data;
     } catch (error) {
-      print("Error: $error");
       return null;
     }
   }

@@ -1,0 +1,35 @@
+com.bps.catatan_harian_bps.app-drawerlayout-1.1.1-0 C:\Users\BlockDev\.gradle\caches\transforms-3\026baa98ebf44474ac1205049a358455\transformed\drawerlayout-1.1.1\res
+com.bps.catatan_harian_bps.app-lifecycle-runtime-2.5.0-1 C:\Users\BlockDev\.gradle\caches\transforms-3\05f184ff8ea2e5718f88c578d4e508c8\transformed\lifecycle-runtime-2.5.0\res
+com.bps.catatan_harian_bps.app-fragment-1.3.6-2 C:\Users\BlockDev\.gradle\caches\transforms-3\0efbe52cfbb5452d8a70f7885b35102e\transformed\fragment-1.3.6\res
+com.bps.catatan_harian_bps.app-jetified-emoji2-1.2.0-3 C:\Users\BlockDev\.gradle\caches\transforms-3\101b8dcaf5c43891e5e4feb2b13eb4d2\transformed\jetified-emoji2-1.2.0\res
+com.bps.catatan_harian_bps.app-transition-1.2.0-4 C:\Users\BlockDev\.gradle\caches\transforms-3\15aeb90073b0accb31c2491e408b77e2\transformed\transition-1.2.0\res
+com.bps.catatan_harian_bps.app-lifecycle-livedata-core-2.5.0-5 C:\Users\BlockDev\.gradle\caches\transforms-3\1a7cd65504162202d23e28d77111d261\transformed\lifecycle-livedata-core-2.5.0\res
+com.bps.catatan_harian_bps.app-appcompat-1.5.0-6 C:\Users\BlockDev\.gradle\caches\transforms-3\47ff55da98ae97d06f34393ec2745bd9\transformed\appcompat-1.5.0\res
+com.bps.catatan_harian_bps.app-jetified-window-1.0.0-beta04-7 C:\Users\BlockDev\.gradle\caches\transforms-3\4a519d8241f18425848ee2eb361f7e88\transformed\jetified-window-1.0.0-beta04\res
+com.bps.catatan_harian_bps.app-jetified-emoji2-views-helper-1.2.0-8 C:\Users\BlockDev\.gradle\caches\transforms-3\5501e4029206b226433968c9547b467b\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.bps.catatan_harian_bps.app-jetified-annotation-experimental-1.1.0-9 C:\Users\BlockDev\.gradle\caches\transforms-3\58eee7595de58f7e443e1f4592934861\transformed\jetified-annotation-experimental-1.1.0\res
+com.bps.catatan_harian_bps.app-jetified-window-java-1.0.0-beta04-10 C:\Users\BlockDev\.gradle\caches\transforms-3\5d1d5115b2c1deea26c991b2200490a5\transformed\jetified-window-java-1.0.0-beta04\res
+com.bps.catatan_harian_bps.app-jetified-viewpager2-1.0.0-11 C:\Users\BlockDev\.gradle\caches\transforms-3\88d08950a48bb88076e34a10a957c91e\transformed\jetified-viewpager2-1.0.0\res
+com.bps.catatan_harian_bps.app-jetified-core-ktx-1.8.0-12 C:\Users\BlockDev\.gradle\caches\transforms-3\8f78b5ff1fc9cbcff77af99d9684f382\transformed\jetified-core-ktx-1.8.0\res
+com.bps.catatan_harian_bps.app-jetified-startup-runtime-1.1.1-13 C:\Users\BlockDev\.gradle\caches\transforms-3\97f8a1747ae7ef0ea357740044414b7b\transformed\jetified-startup-runtime-1.1.1\res
+com.bps.catatan_harian_bps.app-lifecycle-viewmodel-2.5.0-14 C:\Users\BlockDev\.gradle\caches\transforms-3\9d0da490e07771af450e74754f78203f\transformed\lifecycle-viewmodel-2.5.0\res
+com.bps.catatan_harian_bps.app-constraintlayout-2.0.1-15 C:\Users\BlockDev\.gradle\caches\transforms-3\aefe2e1f529ee1f353419a63a0cf968a\transformed\constraintlayout-2.0.1\res
+com.bps.catatan_harian_bps.app-cardview-1.0.0-16 C:\Users\BlockDev\.gradle\caches\transforms-3\ba459a47518b4968df2b861db821b8e9\transformed\cardview-1.0.0\res
+com.bps.catatan_harian_bps.app-material-1.8.0-17 C:\Users\BlockDev\.gradle\caches\transforms-3\bb86a31480096f2b0d4d6feb84da024e\transformed\material-1.8.0\res
+com.bps.catatan_harian_bps.app-core-1.8.0-18 C:\Users\BlockDev\.gradle\caches\transforms-3\c2f2331e310f8721bc828c219e808af0\transformed\core-1.8.0\res
+com.bps.catatan_harian_bps.app-jetified-lifecycle-process-2.4.1-19 C:\Users\BlockDev\.gradle\caches\transforms-3\c90e1e9154d37d34ae51d56376e700d2\transformed\jetified-lifecycle-process-2.4.1\res
+com.bps.catatan_harian_bps.app-jetified-savedstate-1.2.0-20 C:\Users\BlockDev\.gradle\caches\transforms-3\d893a6aeb6dfff8638d14b650fafd9cc\transformed\jetified-savedstate-1.2.0\res
+com.bps.catatan_harian_bps.app-jetified-activity-1.5.0-21 C:\Users\BlockDev\.gradle\caches\transforms-3\da1b326c23d20f9d89edda83f30af725\transformed\jetified-activity-1.5.0\res
+com.bps.catatan_harian_bps.app-recyclerview-1.1.0-22 C:\Users\BlockDev\.gradle\caches\transforms-3\e41137e49e99666743c43fd9082e4180\transformed\recyclerview-1.1.0\res
+com.bps.catatan_harian_bps.app-coordinatorlayout-1.1.0-23 C:\Users\BlockDev\.gradle\caches\transforms-3\f6ebe3f4c8b70c17a44e8b840d102986\transformed\coordinatorlayout-1.1.0\res
+com.bps.catatan_harian_bps.app-jetified-lifecycle-viewmodel-savedstate-2.5.0-24 C:\Users\BlockDev\.gradle\caches\transforms-3\f745ccc35cf5d57c2ffea787b4d928b0\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.0\res
+com.bps.catatan_harian_bps.app-jetified-appcompat-resources-1.5.0-25 C:\Users\BlockDev\.gradle\caches\transforms-3\fcdf684478737278f5dbf43d8df9e5cb\transformed\jetified-appcompat-resources-1.5.0\res
+com.bps.catatan_harian_bps.app-debug-26 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\android\app\src\debug\res
+com.bps.catatan_harian_bps.app-main-27 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\android\app\src\main\res
+com.bps.catatan_harian_bps.app-pngs-28 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\generated\res\pngs\debug
+com.bps.catatan_harian_bps.app-resValues-29 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\generated\res\resValues\debug
+com.bps.catatan_harian_bps.app-rs-30 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\generated\res\rs\debug
+com.bps.catatan_harian_bps.app-mergeDebugResources-31 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.bps.catatan_harian_bps.app-mergeDebugResources-32 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.bps.catatan_harian_bps.app-merged_res-33 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\app\intermediates\merged_res\debug
+com.bps.catatan_harian_bps.app-packaged_res-34 D:\Project\Skripsi Didin\Apps\Mobile\catatan-bps-mobile\build\shared_preferences_android\intermediates\packaged_res\debug

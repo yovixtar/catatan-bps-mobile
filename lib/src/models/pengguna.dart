@@ -5,6 +5,7 @@ class Pengguna {
   String? nip;
   String? password;
   String? role;
+  String? bagian;
   String? token;
   bool? active;
 
@@ -13,6 +14,7 @@ class Pengguna {
     this.password,
     this.nama,
     this.role,
+    this.bagian,
     this.token,
     this.active,
   });
@@ -22,6 +24,7 @@ class Pengguna {
     nip = json['nip'];
     password = json['password'];
     role = json['role'];
+    bagian = json['bagian'];
     token = json['token'];
     active = json['active'];
   }
@@ -32,6 +35,7 @@ class Pengguna {
       'nip': nip,
       'password': password,
       'role': role,
+      'bagian': bagian,
       'token': token,
       'active': active,
     };

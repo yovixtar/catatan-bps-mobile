@@ -51,21 +51,18 @@ class APIService {
               data.map((item) => Pengguna.fromJson(item)).toList();
           return userList;
         } else {
-          // throw Exception('Gagal Load Data');
           return null;
         }
       } else {
-        // throw Exception('Token tidak tersedia');
         return null;
       }
     } catch (e) {
-      // throw Exception('Gagal mendapatkan token');
       return null;
     }
   }
 
   Future<Map<String, dynamic>> addUser(
-      String name, String nip, String password, String role) async {
+      String name, String nip, String password, String role, String bagian) async {
     try {
       var bearerToken = await SessionManager.getBearerToken();
 
@@ -77,6 +74,7 @@ class APIService {
           'nip': nip,
           'password': password,
           'role': role,
+          'bagian': bagian,
         },
       );
       var responseData = jsonDecode(response.body);

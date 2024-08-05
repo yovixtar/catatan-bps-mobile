@@ -55,8 +55,10 @@ class _PenggunaCardState extends State<PenggunaCard> {
                   height: 10,
                 ),
                 Text('NIP. ${widget.pengguna.nip.toString()}'),
+                Text('Bagian : ${widget.pengguna.bagian}'),
                 Text(
-                    "Sebagai : ${(widget.pengguna.role == 'pengawas') ? 'Pengawas' : 'Petugas'}")
+                  "Sebagai : ${(widget.pengguna.role == 'pengawas') ? 'Pengawas' : 'Petugas'}",
+                ),
               ],
             ),
           ),

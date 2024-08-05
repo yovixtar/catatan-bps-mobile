@@ -17,6 +17,7 @@ class _HomePetugasState extends State<HomePetugas> {
   late String _nip = '';
   late String _nama = '';
   late String _role = '';
+  late String _bagian = '';
 
   @override
   void initState() {
@@ -32,6 +33,7 @@ class _HomePetugasState extends State<HomePetugas> {
         _nip = decodedToken['nip'] ?? '';
         _nama = decodedToken['nama'] ?? '';
         _role = decodedToken['role'] ?? '';
+        _bagian = decodedToken['bagian'] ?? '';
       });
     }
   }
@@ -100,6 +102,7 @@ class _HomePetugasState extends State<HomePetugas> {
                         nip: _nip,
                         nama: _nama,
                         role: _role,
+                        bagian: _bagian,
                       );
                     },
                   );

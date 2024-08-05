@@ -7,11 +7,13 @@ class MyProfileModal extends StatelessWidget {
   final String nama;
   final String nip;
   final String role;
+  final String bagian;
 
   MyProfileModal({
     required this.nama,
     required this.nip,
     required this.role,
+    required this.bagian,
   });
 
   @override
@@ -144,6 +146,34 @@ class MyProfileModal extends StatelessWidget {
                         flex: 2,
                         child: Text(
                           ':  $role',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      SizedBox(),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          'Bagian',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          ':  $bagian',
                           style: TextStyle(
                             fontSize: 16,
                           ),
