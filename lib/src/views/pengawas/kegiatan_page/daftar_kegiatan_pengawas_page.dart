@@ -12,6 +12,7 @@ class DaftarKegiatanPengawasPage extends StatefulWidget {
   final String? keyword;
   final bool? is_cari;
   final bool? is_no_reporting;
+  final bool? is_approval;
   final String? nip_pengguna_kegiatan;
 
   DaftarKegiatanPengawasPage({
@@ -19,6 +20,7 @@ class DaftarKegiatanPengawasPage extends StatefulWidget {
     required this.bulan_laporan,
     this.keyword,
     this.is_cari = false,
+    this.is_approval = false,
     this.is_no_reporting,
     this.nip_pengguna_kegiatan = '',
   });
@@ -60,7 +62,6 @@ class _DaftarKegiatanPengawasPageState
       }).toList();
       return data;
     } catch (error) {
-      print("Error: $error");
       return null;
     }
   }
@@ -179,27 +180,28 @@ class _DaftarKegiatanPengawasPageState
                                         is_rejection: is_rejection,
                                       ),
                                     ),
-                                    IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          if (is_rejection) {
-                                            daftarKegiatan[index].is_rejection =
-                                                false;
-                                            kegiatanToAPI[index]['approval'] =
-                                                true;
-                                          } else {
-                                            daftarKegiatan[index].is_rejection =
-                                                true;
-                                            kegiatanToAPI[index]['approval'] =
-                                                false;
-                                          }
-                                        });
-                                      },
-                                      icon: Icon(is_rejection
-                                          ? Icons.close
-                                          : Icons.block),
-                                      iconSize: 30,
-                                    ),
+                                    if (!widget.is_approval!)
+                                      IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            if (is_rejection) {
+                                              daftarKegiatan[index]
+                                                  .is_rejection = false;
+                                              kegiatanToAPI[index]['approval'] =
+                                                  true;
+                                            } else {
+                                              daftarKegiatan[index]
+                                                  .is_rejection = true;
+                                              kegiatanToAPI[index]['approval'] =
+                                                  false;
+                                            }
+                                          });
+                                        },
+                                        icon: Icon(is_rejection
+                                            ? Icons.close
+                                            : Icons.block),
+                                        iconSize: 30,
+                                      ),
                                   ],
                                 );
                               },
@@ -211,59 +213,60 @@ class _DaftarKegiatanPengawasPageState
                             ),
                           ),
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: isCeklistAllClear,
-                              onChanged: (newValue) {
-                                setState(() {
-                                  isCeklistAllClear = newValue!;
-                                });
-                              },
-                            ),
-                            Expanded(
-                              child: Text(
-                                'Seluruh kegiatan telah diverifikasi',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black87,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        ElevatedButton(
-                          onPressed: isLoading || !isCeklistAllClear
-                              ? null
-                              : () {
-                                  _showVerificationConfirmation(context);
+                  if (!widget.is_approval!)
+                    SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: isCeklistAllClear,
+                                onChanged: (newValue) {
+                                  setState(() {
+                                    isCeklistAllClear = newValue!;
+                                  });
                                 },
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(vertical: 16),
-                          ),
-                          child: isLoading
-                              ? CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                      Colors.white),
-                                )
-                              : Text(
-                                  'Verifikasi Sekarang',
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'Seluruh kegiatan telah diverifikasi',
                                   style: TextStyle(
                                     fontSize: 16,
-                                    fontWeight: FontWeight.bold,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black87,
                                   ),
                                 ),
-                        ),
-                      ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          ElevatedButton(
+                            onPressed: isLoading || !isCeklistAllClear
+                                ? null
+                                : () {
+                                    _showVerificationConfirmation(context);
+                                  },
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(vertical: 16),
+                            ),
+                            child: isLoading
+                                ? CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.white),
+                                  )
+                                : Text(
+                                    'Verifikasi Sekarang',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
                 ],
               );
             }

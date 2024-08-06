@@ -61,8 +61,8 @@ class APIService {
     }
   }
 
-  Future<Map<String, dynamic>> addUser(
-      String name, String nip, String password, String role, String bagian) async {
+  Future<Map<String, dynamic>> addUser(String name, String nip, String password,
+      String role, String bagian) async {
     try {
       var bearerToken = await SessionManager.getBearerToken();
 
@@ -444,7 +444,7 @@ class APIService {
   // Admin
 
   Future<List<Laporan>?> getLaporanPengawas(
-      {String? tahun, String? status}) async {
+      {String? tahun, String? status, String? petugas,}) async {
     try {
       var bearerToken = await SessionManager.getBearerToken();
 
@@ -455,7 +455,10 @@ class APIService {
       if (status != null && status.isNotEmpty) {
         queryParams += '${queryParams.isEmpty ? '?' : '&'}status=$status';
       }
-
+      if (petugas != null && petugas.isNotEmpty) {
+        queryParams += '${queryParams.isEmpty ? '?' : '&'}petugas=$petugas';
+      }
+print(queryParams);
       if (bearerToken != null) {
         var response = await http.get(
           Uri.parse("$baseUrl/pengawas/laporan$queryParams"),
@@ -472,19 +475,15 @@ class APIService {
                 data.map((item) => Laporan.fromJson(item)).toList();
             return laporanList;
           } catch (e) {
-            // throw Exception('Gagal mapping data kegiatan');
             return null;
           }
         } else {
-          // throw Exception('Gagal Load Data');
           return null;
         }
       } else {
-        // throw Exception('Token tidak tersedia');
         return null;
       }
     } catch (e) {
-      // throw Exception('Gagal mendapatkan token');
       return null;
     }
   }

@@ -4,8 +4,13 @@ import 'package:intl/intl.dart';
 class FilterLaporanModal extends StatefulWidget {
   final void Function(String tahun, String status) onFilterSelected;
   final bool? is_pengawas;
+  final String? petugas;
 
-  FilterLaporanModal({required this.onFilterSelected, this.is_pengawas});
+  FilterLaporanModal({
+    required this.onFilterSelected,
+    this.is_pengawas,
+    this.petugas,
+  });
 
   @override
   _FilterLaporanModalState createState() => _FilterLaporanModalState();
@@ -83,45 +88,47 @@ class _FilterLaporanModalState extends State<FilterLaporanModal> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  DropdownButtonFormField<String>(
-                    value: selectedStatus,
-                    onChanged: (value) {
-                      setState(() {
-                        selectedStatus = value!;
-                      });
-                    },
-                    items: [
-                      DropdownMenuItem(
-                        value: '',
-                        child: Text('Pilih Status'),
-                      ),
-                      if (!widget.is_pengawas!)
+                  if (widget.petugas == null) ...[
+                    DropdownButtonFormField<String>(
+                      value: selectedStatus,
+                      onChanged: (value) {
+                        setState(() {
+                          selectedStatus = value!;
+                        });
+                      },
+                      items: [
                         DropdownMenuItem(
-                          value: 'inputing',
-                          child: Text('Inputing'),
+                          value: '',
+                          child: Text('Pilih Status'),
                         ),
-                      DropdownMenuItem(
-                        value: 'reporting',
-                        child: Text('Reporting'),
+                        if (!widget.is_pengawas!)
+                          DropdownMenuItem(
+                            value: 'inputing',
+                            child: Text('Inputing'),
+                          ),
+                        DropdownMenuItem(
+                          value: 'reporting',
+                          child: Text('Reporting'),
+                        ),
+                        DropdownMenuItem(
+                          value: 'approval',
+                          child: Text('Approval'),
+                        ),
+                        DropdownMenuItem(
+                          value: 'rejection',
+                          child: Text('Rejection'),
+                        ),
+                        DropdownMenuItem(
+                          value: 'resubmission',
+                          child: Text('Resubmission'),
+                        ),
+                      ],
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                       ),
-                      DropdownMenuItem(
-                        value: 'approval',
-                        child: Text('Approval'),
-                      ),
-                      DropdownMenuItem(
-                        value: 'rejection',
-                        child: Text('Rejection'),
-                      ),
-                      DropdownMenuItem(
-                        value: 'resubmission',
-                        child: Text('Resubmission'),
-                      ),
-                    ],
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
                     ),
-                  ),
                   SizedBox(height: 20),
+                  ],
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(

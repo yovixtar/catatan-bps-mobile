@@ -19,13 +19,7 @@ class SessionManager {
     return token != null;
   }
 
-  // static Future<bool> saveData(Map<String, dynamic> payload) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   return await prefs.setString(responseDataKey, json.encode(payload));
-  // }
-
   static Future<Map<String, dynamic>?> getData() async {
-    final prefs = await SharedPreferences.getInstance();
     final token = await getToken();
     if (token != null) {
       var decodedPayload = JwtDecoder.decode(token);
@@ -43,11 +37,6 @@ class SessionManager {
   static Future<String?> getBearerToken() async {
     try {
       String? token = await getToken();
-      // if (token != null) {
-      //   Map<String, dynamic> tokenData = jsonDecode(token);
-      //   String bearerToken = tokenData['token'];
-      //   return bearerToken;
-      // }
       return token;
     } catch (e) {
       return null;

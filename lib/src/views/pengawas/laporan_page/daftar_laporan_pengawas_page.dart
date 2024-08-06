@@ -1,10 +1,14 @@
-import 'package:catatan_harian_bps/src/widgets/filter_laporan_modal.dart';
 import 'package:flutter/material.dart';
+import 'package:catatan_harian_bps/src/widgets/filter_laporan_modal.dart';
 import 'package:catatan_harian_bps/src/widgets/laporan_card.dart';
 import 'package:catatan_harian_bps/src/models/laporan.dart';
 import 'package:catatan_harian_bps/src/services/api_services.dart';
 
 class DaftarLaporanPengawasPage extends StatefulWidget {
+  final String? petugas;
+
+  DaftarLaporanPengawasPage({this.petugas});
+
   @override
   _DaftarLaporanPengawasPageState createState() =>
       _DaftarLaporanPengawasPageState();
@@ -21,8 +25,11 @@ class _DaftarLaporanPengawasPageState extends State<DaftarLaporanPengawasPage> {
 
   Future<List<Laporan>?> fetchData({String? tahun, String? status}) async {
     try {
-      List<Laporan>? data =
-          await APIService().getLaporanPengawas(tahun: tahun, status: status);
+      List<Laporan>? data = await APIService().getLaporanPengawas(
+        tahun: tahun,
+        status: status,
+        petugas: widget.petugas,
+      );
       return data;
     } catch (error) {
       return null;
@@ -64,6 +71,7 @@ class _DaftarLaporanPengawasPageState extends State<DaftarLaporanPengawasPage> {
                                 _refreshData(tahun: tahun, status: status);
                               },
                               is_pengawas: true,
+                              petugas: widget.petugas,
                             );
                           },
                         );

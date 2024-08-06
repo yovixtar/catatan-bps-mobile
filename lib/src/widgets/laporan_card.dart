@@ -12,12 +12,15 @@ import 'package:intl/intl.dart';
 class LaporanCard extends StatefulWidget {
   final Laporan laporan;
   final bool is_pengawas;
+  final bool is_approval;
   final bool is_verifikasi;
 
-  LaporanCard(
-      {required this.laporan,
-      this.is_pengawas = false,
-      this.is_verifikasi = false});
+  LaporanCard({
+    required this.laporan,
+    this.is_pengawas = false,
+    this.is_approval = false,
+    this.is_verifikasi = false,
+  });
 
   @override
   _LaporanCardState createState() => _LaporanCardState();
@@ -68,18 +71,38 @@ class _LaporanCardState extends State<LaporanCard> {
           }
         else
           {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DaftarKegiatanPengawasPage(
-                  id_laporan: widget.laporan.id!,
-                  bulan_laporan:
-                      '${DateFormat('MMMM yyyy', 'id_ID').format(DateTime(int.parse(widget.laporan.tahun!), int.parse(widget.laporan.bulan!)))}',
-                  is_no_reporting: isNotReporting,
-                  nip_pengguna_kegiatan: widget.laporan.nip_pengguna,
-                ),
-              ),
-            )
+            if (widget.laporan.status_laporan != 'approval')
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DaftarKegiatanPengawasPage(
+                      id_laporan: widget.laporan.id!,
+                      bulan_laporan:
+                          '${DateFormat('MMMM yyyy', 'id_ID').format(DateTime(int.parse(widget.laporan.tahun!), int.parse(widget.laporan.bulan!)))}',
+                      is_no_reporting: isNotReporting,
+                      nip_pengguna_kegiatan: widget.laporan.nip_pengguna,
+                      is_approval: false,
+                    ),
+                  ),
+                )
+              }
+            else
+              {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DaftarKegiatanPengawasPage(
+                      id_laporan: widget.laporan.id!,
+                      bulan_laporan:
+                          '${DateFormat('MMMM yyyy', 'id_ID').format(DateTime(int.parse(widget.laporan.tahun!), int.parse(widget.laporan.bulan!)))}',
+                      is_no_reporting: isNotReporting,
+                      nip_pengguna_kegiatan: widget.laporan.nip_pengguna,
+                      is_approval: true,
+                    ),
+                  ),
+                )
+              }
           }
       },
       child: Card(

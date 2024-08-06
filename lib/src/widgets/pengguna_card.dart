@@ -1,5 +1,6 @@
 import 'package:catatan_harian_bps/src/services/api_services.dart';
 import 'package:catatan_harian_bps/src/views/pengawas/home_page.dart';
+import 'package:catatan_harian_bps/src/views/pengawas/laporan_page/rekap_laporan_petugas.dart';
 import 'package:catatan_harian_bps/src/views/utils/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:catatan_harian_bps/src/models/pengguna.dart';
@@ -67,7 +68,15 @@ class _PenggunaCardState extends State<PenggunaCard> {
             children: [
               PopupMenuButton<String>(
                 onSelected: (value) async {
-                  if (value == 'detail') {}
+                  if (value == 'rekap') {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => RekapLaporanPetugas(
+                          petugas: widget.pengguna.nip!,
+                        ),
+                      ),
+                    );
+                  }
                   if (value == 'hapus') {
                     _showDeleteConfirmation(context);
                   }
@@ -104,6 +113,17 @@ class _PenggunaCardState extends State<PenggunaCard> {
                 },
                 itemBuilder: (BuildContext context) {
                   return <PopupMenuEntry<String>>[
+                    if (widget.pengguna.active!)
+                      const PopupMenuItem<String>(
+                        value: 'rekap',
+                        child: Row(
+                          children: [
+                            Icon(Icons.article, color: Colors.blue),
+                            SizedBox(width: 8),
+                            Text('Rekap Laporan'),
+                          ],
+                        ),
+                      ),
                     if (widget.pengguna.active!)
                       const PopupMenuItem<String>(
                         value: 'disable',
