@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.bps.catatan_harian_bps.app-mergeReleaseResources-31:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\BlockDev\\.gradle\\caches\\transforms-3\\47ff55da98ae97d06f34393ec2745bd9\\transformed\\appcompat-1.5.0\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

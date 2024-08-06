@@ -458,7 +458,6 @@ class APIService {
       if (petugas != null && petugas.isNotEmpty) {
         queryParams += '${queryParams.isEmpty ? '?' : '&'}petugas=$petugas';
       }
-print(queryParams);
       if (bearerToken != null) {
         var response = await http.get(
           Uri.parse("$baseUrl/pengawas/laporan$queryParams"),
