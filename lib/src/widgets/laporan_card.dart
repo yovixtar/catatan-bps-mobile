@@ -181,9 +181,6 @@ class _LaporanCardState extends State<LaporanCard> {
                           } else if (value == 'hapus') {
                             _showDeleteConfirmation(context);
                           } else if (value == 'riwayat verifikasi') {
-                            // Navigator.pushNamed(
-                            //     context, '/riwayat-verifikasi-laporan',
-                            //     arguments: {'id_laporan': widget.laporan.id});
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -299,16 +296,57 @@ class _LaporanCardState extends State<LaporanCard> {
                     height: 5,
                   ),
                 if (widget.is_pengawas || widget.is_verifikasi)
-                  RichText(
-                    text: TextSpan(
-                      text: 'Keterangan : ',
-                      style: TextStyle(color: Colors.black),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: (widget.laporan.keterangan_verifikasi != null ||
-                                  widget.laporan.keterangan_verifikasi != '')
-                              ? widget.laporan.keterangan_verifikasi
-                              : '-',
+                  Container(
+                    padding: EdgeInsets.all(16),
+                    margin: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey[50],
+                      border: Border.all(
+                        color: Colors.blueGrey[200]!,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.info,
+                          color: Colors.blueGrey,
+                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: RichText(
+                            text: TextSpan(
+                              text: 'Keterangan: ',
+                              style: TextStyle(
+                                color: Colors.blueGrey[800],
+                                fontWeight: FontWeight.bold,
+                              ),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: (widget.laporan.keterangan_verifikasi !=
+                                              null &&
+                                          widget.laporan
+                                                  .keterangan_verifikasi !=
+                                              '')
+                                      ? widget.laporan.keterangan_verifikasi
+                                      : '-',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.blueGrey[700],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
